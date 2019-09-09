@@ -1,2 +1,2 @@
 ---
-# defaults file for az-storage-account
+sa_type: "Standard_LRS"

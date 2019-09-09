@@ -1,2 +1,10 @@
 ---
-# tasks file for az-storage-account
+
+- name: Create Azure Storage Account
+  azure_rm_storageaccount:
+    resource_group: "{{ rg_name }}"
+    name: "{{ sa_name }}"
+    type: "{{ sa_type }}"
+
+#- name: Create Storage Account file share
+#  shell: 'az storage share create --name {{ share_name }} --quota {{ share_quota }} --subscription {{ subscription_id }} --connection-string $(az storage account show-connection-string -n {{ sa_name }} -g {{ rg_name }} --subscription {{ subscription_id }} --query "connectionString" -o tsv)'
