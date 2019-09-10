@@ -14,10 +14,5 @@ galaxy_info:
     - 2016
     - 2019
 
-galaxy_tags:
-  - azure
-  - vm
-  - microsoft
-
 dependencies:
   - rdvansloten.az_resource_group
