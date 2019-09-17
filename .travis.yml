@@ -4,3 +4,13 @@ language: minimal
 
 notifications:
     webhooks: https://galaxy.ansible.com/api/v1/notifications/
+
+after_success:
+  - wget https://raw.githubusercontent.com/rdvansloten/az-webhooks/master/rocketchat.sh
+  - chmod +x rocketchat.sh
+  - ./rocketchat.sh $WEBHOOK_URL succeeded
+
+after_failure:
+  - wget https://raw.githubusercontent.com/rdvansloten/az-webhooks/master/rocketchat.sh
+  - chmod +x rocketchat.sh
+  - ./rocketchat.sh $WEBHOOK_URL failed
